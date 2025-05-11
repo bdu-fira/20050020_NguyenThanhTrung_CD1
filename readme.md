@@ -1,5 +1,9 @@
 # Website bán máy tính ASP.NET MVC + SqlServer (2019)
 ## Hướng dẫn
+### Nhóm 22 
+### Nguyễn Thành Trung 20050020
+### Nguyễn Anh Hào 20050019
+### Hồ Lợi 20050072
 + Restore database trong SQL Server Management Studio bằng file `DBWEBPC`  
 + Vào 'App.config' và 'Web.config'  tìm đến connectionStrings
 "data source=ADMIN-PC;initial catalog=DBWEBPC"

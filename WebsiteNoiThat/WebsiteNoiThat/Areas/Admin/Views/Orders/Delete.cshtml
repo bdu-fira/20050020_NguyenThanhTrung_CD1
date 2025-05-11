@@ -1,0 +1,46 @@
+﻿@model Models.EF.Order
+
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Xác nhận xóa đơn hàng</h2>
+
+<p>Bạn có chắc chắn muốn xóa đơn hàng @Model.OrderId không?</p>
+
+<div>
+    <h4>Thông tin đơn hàng</h4>
+    <table class="table">
+        <tr>
+            <th>Mã đơn hàng</th>
+            <td>@Model.OrderId</td>
+        </tr>
+        <tr>
+            <th>Tên người nhận</th>
+            <td>@Model.ShipName</td>
+        </tr>
+        <tr>
+            <th>Địa chỉ giao hàng</th>
+            <td>@Model.ShipAddress</td>
+        </tr>
+        <tr>
+            <th>Email người nhận</th>
+            <td>@Model.ShipEmail</td>
+        </tr>
+        <tr>
+            <th>Số điện thoại người nhận</th>
+            <td>@Model.ShipPhone</td>
+        </tr>
+    </table>
+</div>
+
+@using (Html.BeginForm("Delete", "Orders", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.OrderId) <!-- Chứa OrderId để gửi đi khi thực hiện xóa -->
+
+    <input type="submit" value="Xóa" class="btn btn-danger" />
+    @Html.ActionLink("Hủy bỏ", "Show", null, new { @class = "btn btn-secondary" })
+}
